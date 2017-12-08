@@ -40,9 +40,8 @@ public class Tabuleiro {
         return matrizToString.toString();
     }
 
-
     public boolean marcarTabuleiro(char simbolo, int posX, int posY) {
-        if(posX >3 || posY>3){
+        if(posX > 3 || posY > 3){
             return false;
         } else if(this.matriz[posX][posY] == '_'){
             this.matriz[posX][posY] = simbolo;
@@ -50,9 +49,5 @@ public class Tabuleiro {
         }  else {
             return false;
         }
-
-
     }
-
-
 }

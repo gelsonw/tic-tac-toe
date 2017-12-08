@@ -56,8 +56,19 @@ public class TicTacToeTests {
     public void validaJogadaComPosicaoInexistente(){
         Partida partida = populaPartida("Partida 6", "Jogador 0", "Jogador 1");
         boolean resultadoJogadaUm = partida.executarJogada(partida.getJogadorZero(), 5, 5);
-        
+
         assertFalse(resultadoJogadaUm);
+    }
+
+    @Test
+    public void verificaVencedorDaPartida(){
+        Partida partida = populaPartida("Partida 7", "Jogador 0", "Jogador 1");
+        partida.executarJogada(partida.getJogadorUm(),0,1);
+        partida.executarJogada(partida.getJogadorUm(),0,2);
+        partida.executarJogada(partida.getJogadorUm(),1,1);
+        partida.executarJogada(partida.getJogadorUm(),1,2);
+        partida.executarJogada(partida.getJogadorUm(),2,2);
+        assertTrue(partida.verificaVencedor());
     }
 
     private Partida populaPartida(String idPartida, String nomeJogadorZero, String nomeJogadorUm) {

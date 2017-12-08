@@ -5,9 +5,11 @@ public class Partida {
     private Jogador jogadorZero;
     private Jogador jogadorUm;
     private Tabuleiro tabuleiro;
+    private int numeroJogadasRealizadas;
 
     public Partida(String id) {
         this.id = id;
+        this.numeroJogadasRealizadas = 0;
         this.tabuleiro = new Tabuleiro();
     }
 
@@ -40,8 +42,19 @@ public class Partida {
     }
 
     public boolean executarJogada(Jogador jogador, int posX, int posY) {
-        return this.tabuleiro.marcarTabuleiro(jogador.getSimbolo(), posX, posY);
+        if(this.tabuleiro.marcarTabuleiro(jogador.getSimbolo(), posX, posY)){
+            this.numeroJogadasRealizadas++;
+            return true;
+        } else {
+            return false;
+        }
     }
 
-
+    public boolean verificaVencedor() {
+        if(numeroJogadasRealizadas >= 5){
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
