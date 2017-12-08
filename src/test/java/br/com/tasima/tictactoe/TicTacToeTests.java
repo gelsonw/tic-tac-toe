@@ -26,9 +26,11 @@ public class TicTacToeTests {
     }
 
     @Test
-    public void exibirTabuleiroDaPartida(){
+    public void exibirTabuleiroVazio(){
         Partida partida = new Partida("Partida 3");
 
         assertEquals("_|_|_\n_|_|_\n_|_|_", partida.getTabuleiro().toString());
     }
+
+
 }

@@ -7,6 +7,12 @@ public class Tabuleiro {
 
     public Tabuleiro() {
         this.matriz = new char[3][3];
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                this.matriz[i][j]='_';
+            }
+        }
+
     }
 
     public char[][] getMatriz() {
@@ -19,6 +25,24 @@ public class Tabuleiro {
 
     @Override
     public String toString() {
+
+        for (int i = 0; i < 3; i++) {
+
+            for (int j = 0; j < 3; j++) {
+
+                System.out.print(this.matriz[i][j]);
+
+                if (j<2){
+                    System.out.print('|');
+                }
+
+            }
+
+            if (i<2){
+                System.out.print("\n");
+            }
+
+        }
         return "_|_|_\n_|_|_\n_|_|_";
     }
 }
