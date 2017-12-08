@@ -25,24 +25,18 @@ public class Tabuleiro {
 
     @Override
     public String toString() {
-
+        StringBuilder matrizToString = new StringBuilder();
         for (int i = 0; i < 3; i++) {
-
             for (int j = 0; j < 3; j++) {
-
-                System.out.print(this.matriz[i][j]);
-
+                matrizToString.append(this.matriz[i][j]);
                 if (j<2){
-                    System.out.print('|');
+                    matrizToString.append("|");
                 }
-
             }
-
             if (i<2){
-                System.out.print("\n");
+                matrizToString.append("\n");
             }
-
         }
-        return "_|_|_\n_|_|_\n_|_|_";
+        return matrizToString.toString();
     }
 }
