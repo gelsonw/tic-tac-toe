@@ -52,10 +52,21 @@ public class TicTacToeTests {
         assertEquals("0|_|_\n_|_|_\n_|_|_", partida.getTabuleiro().toString());
     }
 
+    @Test
+    public void validaJogadaComPosicaoInexistente(){
+        Partida partida = populaPartida("Partida 6", "Jogador 0", "Jogador 1");
+        boolean resultadoJogadaUm = partida.executarJogada(partida.getJogadorZero(), 5, 5);
+        
+        assertFalse(resultadoJogadaUm);
+    }
+
     private Partida populaPartida(String idPartida, String nomeJogadorZero, String nomeJogadorUm) {
         Partida partida = new Partida(idPartida);
         partida.setJogadorZero(new Jogador(nomeJogadorZero, '0'));
         partida.setJogadorUm(new Jogador(nomeJogadorUm, '1'));
         return partida;
     }
+
+
+
 }

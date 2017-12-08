@@ -42,7 +42,9 @@ public class Tabuleiro {
 
 
     public boolean marcarTabuleiro(char simbolo, int posX, int posY) {
-        if(this.matriz[posX][posY] == '_'){
+        if(posX >3 || posY>3){
+            return false;
+        } else if(this.matriz[posX][posY] == '_'){
             this.matriz[posX][posY] = simbolo;
             return true;
         }  else {
