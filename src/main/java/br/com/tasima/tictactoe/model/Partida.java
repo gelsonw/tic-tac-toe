@@ -39,7 +39,7 @@ public class Partida {
         return tabuleiro;
     }
 
-    public void executarJogada(Jogador jogador, int posX, int posY) {
-        this.tabuleiro.getMatriz()[posX][posY] = jogador.getSimbolo();
+    public boolean executarJogada(Jogador jogador, int posX, int posY) {
+        return this.tabuleiro.marcarTabuleiro(jogador.getSimbolo(), posX, posY);
     }
 }

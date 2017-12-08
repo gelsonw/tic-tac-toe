@@ -39,4 +39,18 @@ public class Tabuleiro {
         }
         return matrizToString.toString();
     }
+
+
+    public boolean marcarTabuleiro(char simbolo, int posX, int posY) {
+        if(this.matriz[posX][posY] == '_'){
+            this.matriz[posX][posY] = simbolo;
+            return true;
+        }  else {
+            return false;
+        }
+
+
+    }
+
+
 }

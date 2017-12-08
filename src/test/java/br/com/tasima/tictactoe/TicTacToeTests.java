@@ -42,4 +42,6 @@ public class TicTacToeTests {
 
         assertEquals("0|_|_\n_|_|_\n_|_|_", partida.getTabuleiro().toString());
     }
+
+
 }
