@@ -38,4 +38,8 @@ public class Partida {
     public Tabuleiro getTabuleiro() {
         return tabuleiro;
     }
+
+    public void executarJogada(Jogador jogador, int posX, int posY) {
+        this.tabuleiro.getMatriz()[posX][posY] = jogador.getSimbolo();
+    }
 }

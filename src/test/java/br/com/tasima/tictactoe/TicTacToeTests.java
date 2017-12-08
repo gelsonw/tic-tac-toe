@@ -32,5 +32,14 @@ public class TicTacToeTests {
         assertEquals("_|_|_\n_|_|_\n_|_|_", partida.getTabuleiro().toString());
     }
 
+    @Test
+    public void realizarUmaJogada() {
+        Partida partida = new Partida("Partida 4");
+        partida.setJogadorZero(new Jogador("Jogador 0", '0'));
+        partida.setJogadorUm(new Jogador("Jogador 1", '1'));
 
+        partida.executarJogada(partida.getJogadorZero(), 0, 0);
+
+        assertEquals("0|_|_\n_|_|_\n_|_|_", partida.getTabuleiro().toString());
+    }
 }
