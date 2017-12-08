@@ -23,6 +23,12 @@ public class TicTacToeTests {
 
         assertEquals("Jogador 0", partida.getJogadorZero().getNome());
         assertEquals("Jogador 1", partida.getJogadorUm().getNome());
+    }
 
+    @Test
+    public void exibirTabuleiroDaPartida(){
+        Partida partida = new Partida("Partida 3");
+
+        assertEquals("_|_|_\n_|_|_\n_|_|_", partida.getTabuleiro().toString());
     }
 }

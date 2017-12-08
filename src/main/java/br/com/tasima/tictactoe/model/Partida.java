@@ -4,9 +4,11 @@ public class Partida {
     private String id;
     private Jogador jogadorZero;
     private Jogador jogadorUm;
+    private Tabuleiro tabuleiro;
 
     public Partida(String id) {
         this.id = id;
+        this.tabuleiro = new Tabuleiro();
     }
 
     public String getId() {
@@ -31,5 +33,9 @@ public class Partida {
 
     public void setJogadorUm(Jogador jogadorUm) {
         this.jogadorUm = jogadorUm;
+    }
+
+    public Tabuleiro getTabuleiro() {
+        return tabuleiro;
     }
 }
